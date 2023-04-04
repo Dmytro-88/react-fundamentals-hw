@@ -1,0 +1,11 @@
+.input-wrap {
+    display: inline-block;
+    width: 60%;
+}
+
+.input {
+    font-size: 1rem;
+    padding: 0.5rem;
+    border: 2px solid orange;
+    width: 100%;
+}

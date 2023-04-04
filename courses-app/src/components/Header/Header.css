@@ -1,0 +1,17 @@
+header {
+    border: 2px solid rosybrown;
+    margin: 2rem;
+    padding: 1rem 0.5rem;
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+}
+
+.name-button-wrap {
+    display:flex;
+    align-items: center;
+}
+
+.name-button-wrap * {
+    margin: 1rem;
+}

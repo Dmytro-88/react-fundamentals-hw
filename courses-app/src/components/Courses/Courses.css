@@ -1,0 +1,10 @@
+.courses {
+    border: 2px solid lightskyblue;
+    margin: 2rem;
+}
+
+.top-bar {
+    margin: 2rem;
+    display: flex;
+    justify-content: space-between;
+}
