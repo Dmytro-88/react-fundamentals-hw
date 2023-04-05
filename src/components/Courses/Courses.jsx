@@ -13,21 +13,19 @@ import getCourseAuthors from '../../helpers/getCourseAuthors';
 import './Courses.css';
 
 function Courses(props) {
-	const [renderCoursesList, setRenderCourseList] = useState(mockedCoursesList);
+	const [coursesList, setCoursesList] = useState(mockedCoursesList);
 
 	function searchButtonClick(text) {
-		if (text === '') {
-			setRenderCourseList(mockedCoursesList);
+		if (!text) {
+			setCoursesList(mockedCoursesList);
 		} else {
-			const newList = [];
 			const lowText = text.toLowerCase();
-			mockedCoursesList.forEach((course) =>
-				course.title.toLowerCase().includes(lowText) ||
-				course.id.toLowerCase().includes(lowText)
-					? newList.push(course)
-					: true
+			const newList = mockedCoursesList.filter(
+				(course) =>
+					course.title.toLowerCase().includes(lowText) ||
+					course.id.toLowerCase().includes(lowText)
 			);
-			setRenderCourseList(newList);
+			setCoursesList(newList);
 		}
 	}
 
@@ -41,7 +39,7 @@ function Courses(props) {
 					buttonType={BTN_TYPE_BUTTON}
 				/>
 			</div>
-			{renderCoursesList.map((course) => {
+			{coursesList.map((course) => {
 				const courseAuthors = getCourseAuthors(course);
 				return (
 					<CoursesCard

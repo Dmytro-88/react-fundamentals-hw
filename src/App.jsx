@@ -6,19 +6,19 @@ import CreateCourse from './components/CreateCourse/CreateCourse';
 import './App.css';
 
 function App() {
-	const [isCreateCourse, setIsCreateCourse] = useState(false);
+	const [isCreateCourseRoute, setIsCreateCourseRoute] = useState(false);
 
-	function switchCourseCreateCourse() {
-		setIsCreateCourse(!isCreateCourse);
+	function toggleRoute() {
+		setIsCreateCourseRoute(!isCreateCourseRoute);
 	}
 
 	return (
 		<>
 			<Header />
-			{isCreateCourse ? (
-				<CreateCourse createCourseClick={switchCourseCreateCourse} />
+			{isCreateCourseRoute ? (
+				<CreateCourse createCourseClick={toggleRoute} />
 			) : (
-				<Courses addNewCourseClick={switchCourseCreateCourse} />
+				<Courses addNewCourseClick={toggleRoute} />
 			)}
 		</>
 	);

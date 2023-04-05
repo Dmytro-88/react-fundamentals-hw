@@ -6,9 +6,7 @@ import getDatePoint from '../../../../helpers/getDatePoint';
 import './CourseCard.css';
 
 function CoursesCard(props) {
-	const { title, description, creationDate, duration, authorsNameList } = {
-		...props,
-	};
+	const { title, description, creationDate, duration, authorsNameList } = props;
 
 	const courseDuration = getCourseDuration(duration);
 	const authors = authorsNameList.join(', ');
