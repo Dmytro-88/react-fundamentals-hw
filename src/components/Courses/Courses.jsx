@@ -8,7 +8,6 @@ import {
 	BTN_TYPE_BUTTON,
 	mockedCoursesList,
 } from '../../constants';
-import getCourseAuthors from '../../helpers/getCourseAuthors';
 
 import './Courses.css';
 
@@ -40,14 +39,7 @@ function Courses(props) {
 				/>
 			</div>
 			{coursesList.map((course) => {
-				const courseAuthors = getCourseAuthors(course);
-				return (
-					<CoursesCard
-						key={course.id}
-						authorsNameList={courseAuthors}
-						{...course}
-					/>
-				);
+				return <CoursesCard key={course.id} {...course} />;
 			})}
 		</section>
 	);

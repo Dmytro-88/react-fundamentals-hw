@@ -1,16 +1,20 @@
 import Button from '../../../../common/Button/Button';
 import { SHOW_COURSE_BTN_TEXT } from '../../../../constants';
+import getCourseAuthors from '../../../../helpers/getCourseAuthors';
 import getCourseDuration from '../../../../helpers/getCourseDuration';
 import getDatePoint from '../../../../helpers/getDatePoint';
 
 import './CourseCard.css';
 
 function CoursesCard(props) {
-	const { title, description, creationDate, duration, authorsNameList } = props;
+	const { title, description, creationDate, duration, authors } = props;
 
 	const courseDuration = getCourseDuration(duration);
-	const authors = authorsNameList.join(', ');
 	const creationDatePoint = getDatePoint(creationDate);
+	const courseAuthors = getCourseAuthors(authors);
+	const courseAuthorsName = courseAuthors
+		.map((author) => author.name)
+		.join(', ');
 
 	function showCourseButtonClick() {
 		console.log('Show course button click');
@@ -25,7 +29,7 @@ function CoursesCard(props) {
 			<div className='course-info'>
 				<p className='overflow'>
 					<b>Authors: </b>
-					{authors}
+					{courseAuthorsName}
 				</p>
 				<p>
 					<b>Duration: </b>
