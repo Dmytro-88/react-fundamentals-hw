@@ -1,0 +1,23 @@
+.course-card {
+    border: 2px solid lightgreen;
+    margin: 2rem;
+    padding: 2rem 2rem 1rem 2rem;
+    display: grid;
+    grid-template-columns: 1fr 300px;
+    gap: 3rem;
+}
+
+.course-card div * {
+    margin-bottom: 1rem;
+}
+
+.overflow {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.course-card .btn {
+    margin: 0 auto;
+    display: block;
+}
